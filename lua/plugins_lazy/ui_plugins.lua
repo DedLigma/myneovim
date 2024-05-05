@@ -43,4 +43,50 @@ return {
             vim.cmd('colorscheme bluloco')
         end,
     },
+    {
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+            animation = true,
+            tabpages = true,
+            clickable = true,
+            focus_on_close = 'right',
+            icons = {
+                -- Configure the base icons on the bufferline.
+                -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
+                buffer_index = true,
+                buffer_number = false,
+
+
+                gitsigns = {
+                    added = { enabled = false, icon = '+' },
+                    changed = { enabled = false, icon = '~' },
+                    deleted = { enabled = false, icon = '-' },
+                },
+                filetype = {
+                    custom_colors = false,
+                    enabled = true,
+                },
+            },
+            sidebar_filetypes = {
+                -- Use the default values: {event = 'BufWinLeave', text = '', align = 'left'}
+                NvimTree = true,
+                -- Or, specify the text used for the offset:
+                undotree = {
+                    text = 'undotree',
+                    align = 'center', -- *optionally* specify an alignment (either 'left', 'center', or 'right')
+                },
+                -- Or, specify the event which the sidebar executes when leaving:
+                ['neo-tree'] = { event = 'BufWipeout' },
+                -- Or, specify all three
+                Outline = { event = 'BufWinLeave', text = 'symbols-outline', align = 'right' },
+            },
+        },
+        version = '^1.0.0',
+    },
+
 }
