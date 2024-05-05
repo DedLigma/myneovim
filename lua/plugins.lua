@@ -1,13 +1,11 @@
+local ui_plugins = require("plugins.ui_plugins")
+local git_plugins = require("plugins.git_plugins")
+local base_code_plugins = require("plugins.base_code_plugins")
+
 local plugins = {
-    {
-        'shaunsingh/doom-vibrant.nvim',
-    },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-          ensure_installed = {"bash", "c", "cpp", "cmake", "doxygen", "gitignore", "json", "lua", "make", "python"},
-        },
-    },
+    base_code_plugins,
+    git_plugins,
+    ui_plugins,
 }
 
 return plugins
