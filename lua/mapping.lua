@@ -4,7 +4,7 @@ require("plugins")
 
 local wk = require("which-key")
 wk.register({
-    Q = {"<cmd>q!<cr>", "Exit without saving"},
+    Q = {"<cmd>qa!<cr>", "Exit without saving"},
     q = {"<cmd>wq<cr>", "Exit with saving"},
     g = {
         name = "Git Signs",
