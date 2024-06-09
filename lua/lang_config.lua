@@ -29,6 +29,15 @@ formatter.setup({
         }
       end
     },
+    c = {
+      function()
+        return {
+          exe = "clang-format",
+          args = {},
+          stdin = true
+        }
+      end
+    },
     lua = {
       function()
         return {
